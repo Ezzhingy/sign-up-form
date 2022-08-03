@@ -2,6 +2,8 @@
     box-sizing: border-box;
     --light-gray: #e9e9e9;
     --dark-gray: #d7d6d7;
+    --darker-grey: #5f5c60;
+    --logo-height: 771.4px;
 }
 
 *, *:before, *:after {
@@ -55,11 +57,11 @@ img[src$=".jpg"] {
 .img-container > img + img {
     position: absolute;
     left: 0;
-    bottom: 60%;
+    bottom: 66.5%;
 }
 
 .top {
-    height: 307.2px;
+    height: calc(var(--logo-height) * 0.4 - 51.523px);
     background-color: var(--light-gray);
     display: flex;
     flex-direction: column;
@@ -74,22 +76,45 @@ img[src$=".jpg"] {
 }
 
 .mid {
-    min-height: 168.88px;
-    box-shadow: 5px 10px red;
+    min-height: calc(var(--logo-height) * 0.3);
+    box-shadow: 0px 10px 5px 5px var(--dark-gray);
     display: flex;
     flex-wrap: wrap;
-}
-
-.bot {
-    height: 230.4px;
-    background-color: var(--light-gray);
-    padding-top: 20px;
 }
 
 .input-container {
     display: flex;
     flex-direction: column;
     margin: 10px 80px 10px 80px;
+}
+
+.bot {
+    min-height: calc(var(--logo-height) * 0.3);
+    background-color: var(--light-gray);
+    margin-top: 5px;
+}
+
+.bot a {
+    color: var(--darker-grey);
+    font-weight: 700;
+}
+
+.bot a:hover {
+    text-decoration: underline;
+}
+
+.bot button:hover {
+    background-color: var(--dark-gray);
+}
+
+.bot button,
+.bot p {
+    margin: 20px 80px 0 80px;
+}
+
+.bot button {
+    padding: 10px 0px 10px 0px;
+    border-radius: 10px;
 }
 
 
@@ -107,6 +132,10 @@ img[src$=".jpg"] {
 a {
     text-decoration: none;
     color: black;
+}
+
+a:hover {
+    font-weight: 700;
 }
 
 .footer > p {
