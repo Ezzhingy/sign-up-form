@@ -4,6 +4,32 @@
     --dark-gray: #d7d6d7;
 }
 
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+label, button, input, select, textarea {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100%;
+}
+
+input, textarea, select, button {
+    width : 200px;
+    padding: 0;
+    margin: 0;
+}
+  
+label {
+    font-size: small;
+}
+
+
+h3 {
+    padding: 0;
+    margin: 20px 80px 10px 80px;
+}
+
+
 body {
     height: 100vh;
     display: flex;
@@ -20,6 +46,10 @@ body {
 
 .img-container > img {
     width: 32rem;
+}
+
+img[src$=".jpg"] {
+    height: 100%;
 }
 
 .img-container > img + img {
@@ -44,11 +74,22 @@ body {
 }
 
 .mid {
-    height: 230.4px;
+    min-height: 168.88px;
+    box-shadow: 5px 10px red;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .bot {
     height: 230.4px;
+    background-color: var(--light-gray);
+    padding-top: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 80px 10px 80px;
 }
 
 
