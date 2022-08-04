@@ -25,12 +25,15 @@ label {
     font-size: small;
 }
 
+input {
+    border-radius: 6px;
+}
+
 
 h3 {
     padding: 0;
     margin: 20px 80px 10px 80px;
 }
-
 
 body {
     height: 100vh;
@@ -117,14 +120,21 @@ img[src$=".jpg"] {
     border-radius: 10px;
 }
 
+span {
+    font-size: smaller;
+    color: red;
+}
 
-
+.initial,
+.confirm {
+    border-color: red;
+}
 
 .footer {
     display: flex; 
     justify-content: center;
     align-items: center; 
-    font-size: 15px;
+    font-size: 1rem;
     margin-top: auto;
     background-color: var(--dark-gray);
 }

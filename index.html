@@ -7,8 +7,8 @@
     <title>Sign-up Form</title>
     <link rel="stylesheet" href="static/reset.css">
     <link rel="stylesheet" href="static/styles.css">
-
 </head>
+
 <body>
     <div class="main-container">
         <div class="img-container">
@@ -38,19 +38,18 @@
                     </div>
                     <div class="input-container">
                         <label for="phone">PHONE NUMBER</label>
-                        <input type="text" id="phone" placeholder="123-456-7890" name="phone" required>
+                        <input type="text" id="phone" placeholder="123-456-7890" name="phone" pattern="(\d{3}[\-]\d{3}[\-]\d{4})" required>
                     </div>
                     <div class="input-container">
                         <label for="pass">PASSWORD</label>
-                        <input type="password" id="pass" name="pass" required>
-                        <span></span>
+                        <input class="initial" type="password" id="pass" name="pass" required>
+                        <span>* Passwords do not match</span>
                     </div>
                     <div class="input-container">
                         <label for="confirm-pass">CONFIRM PASSWORD</label>
-                        <input type="password" id="confirm-pass" name="confirm-pass" required>
+                        <input class="confirm" type="password" id="confirm-pass" name="confirm-pass" required>
                     </div>
                 </div>
-
                 <div class="bot">
                     <button>CREATE ACCOUNT</button>
                     <p>Already have an account? <a href="./index.html">Log in</a></p>
@@ -61,5 +60,31 @@
     <div class="footer">
         <p>Copyright © <a href="https://github.com/Ezzhingy">Ezzhingy</a> 2022</p>
     </div>
+
+    <script>
+        function confirmPass(e) {
+            const firstPass = document.querySelector('.initial');
+            const confirmPass = document.querySelector('.confirm');
+            const notMatching = document.querySelector('span')
+            
+            if (firstPass.value !== '' || confirmPass.value !== '') {
+                if (firstPass.value === confirmPass.value) {
+                    firstPass.style.borderColor = '#35ca56';
+                    confirmPass.style.borderColor = '#35ca56';
+                    notMatching.textContent = '';
+                    firstPass.setCustomValidity("");
+                    confirmPass.setCustomValidity("");
+                } else {
+                    firstPass.style.borderColor = 'red';
+                    confirmPass.style.borderColor = 'red';
+                    notMatching.textContent = '* Passwords do not match';
+
+                    firstPass.setCustomValidity("Passwords do not match");
+                    confirmPass.setCustomValidity("Passwords do not match");
+                }
+            }
+        }
+        window.addEventListener('keyup', confirmPass);
+    </script>
 </body>
 </html>
